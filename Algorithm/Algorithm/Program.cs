@@ -10,6 +10,7 @@ namespace Algorithm
         {
             Console.WriteLine("Choose 1: For String Permutations");
             Console.WriteLine("Choose 2: For Binary Search");
+            Console.WriteLine("Choose 3: For Insertion Sort");
             int options = int.Parse(Console.ReadLine());
 
             switch (options)
@@ -35,6 +36,17 @@ namespace Algorithm
                     string input = Console.ReadLine();
                     bool found = search.Search(input, search);
                     Console.WriteLine($"{input} found - " + found);
+                    break;
+                case 3:
+                    InsertionSort insertionSort = new InsertionSort();
+                    Console.WriteLine("Enter some Words: ");
+                    string words = Console.ReadLine();
+                    string[] wordsArray = words.Split(" ");
+                    insertionSort.InsertSort(wordsArray);
+                    foreach (var item in wordsArray)
+                    {
+                        Console.Write(item + " ");
+                    }
                     break;
                 default:
                     Console.WriteLine("Choose valid");

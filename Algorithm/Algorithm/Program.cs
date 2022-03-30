@@ -8,7 +8,8 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Chhose 1: for String permutations");
+            Console.WriteLine("Choose 1: For String Permutations");
+            Console.WriteLine("Choose 2: For Binary Search");
             int options = int.Parse(Console.ReadLine());
 
             switch (options)
@@ -20,6 +21,20 @@ namespace Algorithm
                     StringPermutation.RecursivePermutation(word, 0, word.Length - 1);
                     Console.WriteLine("Iterarive ->");
                     StringPermutation.IterativeFindPermutation("", word);
+                    break;
+                case 2:
+                    string sentence = "hello,coding,is,fun";
+                    Console.WriteLine($"The sentence is - {sentence}");
+                    string[] array = sentence.Split(",");
+                    BinarySearch<string> search = new BinarySearch<string>(array[0]);
+                    for (int i = 1; i < array.Length; i++)
+                    {
+                        search.Insert(array[i]);
+                    }
+                    Console.WriteLine("Enter word to display");
+                    string input = Console.ReadLine();
+                    bool found = search.Search(input, search);
+                    Console.WriteLine($"{input} found - " + found);
                     break;
                 default:
                     Console.WriteLine("Choose valid");

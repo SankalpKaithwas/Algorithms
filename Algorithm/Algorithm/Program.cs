@@ -11,6 +11,7 @@ namespace Algorithm
             Console.WriteLine("Choose 1: For String Permutations");
             Console.WriteLine("Choose 2: For Binary Search");
             Console.WriteLine("Choose 3: For Insertion Sort");
+            Console.WriteLine("Choose 4: For Bubble Sort");
             int options = int.Parse(Console.ReadLine());
 
             switch (options)
@@ -48,8 +49,23 @@ namespace Algorithm
                         Console.Write(item + " ");
                     }
                     break;
+                case 4:
+                    BubbleSort bubbleSort = new BubbleSort();
+                    List<int> numbers = new List<int>();
+                    for (int i = 0; i < 5; i++)
+                    {
+                        Console.WriteLine($"Enter {i + 1} Number: ");
+                        int num = int.Parse(Console.ReadLine());
+                        numbers.Add(num);
+                    }
+                    bubbleSort.BubbleSortNumber(numbers);
+                    for (int i = 0; i < numbers.Count; i++)
+                    {
+                        Console.WriteLine(numbers[i]);
+                    }
+                    break;
                 default:
-                    Console.WriteLine("Choose valid");
+                    Console.WriteLine("Choose valid option");
                     break;
             }
         }

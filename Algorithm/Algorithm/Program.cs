@@ -8,7 +8,7 @@ namespace Algorithm
     {
         static void Main(string[] args)
         {
-            int options = 0;
+            int options;
             do
             {
                 Console.WriteLine("Choose 1: For String Permutations");
@@ -17,6 +17,7 @@ namespace Algorithm
                 Console.WriteLine("Choose 4: For Bubble Sort");
                 Console.WriteLine("Choose 5: For Merge Sort");
                 Console.WriteLine("Choose 6: Anagram Detection");
+                Console.WriteLine("Choose 7: Prime number between 0 to 1000");
                 Console.WriteLine("Choose 0: To Exit");
                 options = int.Parse(Console.ReadLine());
 
@@ -86,6 +87,10 @@ namespace Algorithm
                         Console.WriteLine("Enter second word");
                         string secondWord = Console.ReadLine();
                         anagram.CheckAnagram(firstWord, secondWord);
+                        break;
+                    case 7:
+                        PrimeNumber primeNumber = new PrimeNumber();
+                        primeNumber.PrimeNumberInRange();
                         break;
                     case 0:
                         Console.WriteLine("Exit");

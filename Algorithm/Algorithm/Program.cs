@@ -16,6 +16,7 @@ namespace Algorithm
                 Console.WriteLine("Choose 3: For Insertion Sort");
                 Console.WriteLine("Choose 4: For Bubble Sort");
                 Console.WriteLine("Choose 5: For Merge Sort");
+                Console.WriteLine("Choose 6: Anagram Detection");
                 Console.WriteLine("Choose 0: To Exit");
                 options = int.Parse(Console.ReadLine());
 
@@ -77,6 +78,14 @@ namespace Algorithm
                         foreach (var item in arrayMergeSort)
                             Console.Write(item + " ");
                         Console.WriteLine();
+                        break;
+                    case 6:
+                        AnagramDetection anagram = new AnagramDetection();
+                        Console.WriteLine("Enter first word");
+                        string firstWord = Console.ReadLine();
+                        Console.WriteLine("Enter second word");
+                        string secondWord = Console.ReadLine();
+                        anagram.CheckAnagram(firstWord, secondWord);
                         break;
                     case 0:
                         Console.WriteLine("Exit");
